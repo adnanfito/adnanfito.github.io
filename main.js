@@ -11,8 +11,8 @@ checkbox.addEventListener('click', function () {
   if (checkbox.checked) {
     html.classList.add('dark');
     localStorage.setItem('theme', 'dark');
-    sun.classList.remove('hidden');
     moon.classList.add('hidden');
+    sun.classList.remove('hidden');
     light.classList.add('hidden');
     dark.classList.remove('hidden');
     lightProfile.classList.add('hidden');
