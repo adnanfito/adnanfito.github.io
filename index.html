@@ -1,208 +1,367 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark scroll-smooth">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My Portfolio | Adnan</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
-    <!-- My CSS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adnan Portfolio!</title>
+    <!-- Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet" />
+    <!-- CSS only -->
     <link rel="stylesheet" href="style.css" />
+    <!-- Box Icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!-- Scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      ScrollReveal({ reset: false });
+      ScrollReveal({ duration: 1000 });
+    </script>
   </head>
-  <body id="home">
+  <body class="font-poppins bg-black dark:bg-white">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top" style="background-color: #2f4550">
-      <div class="container">
-        <a class="navbar-brand" href="#">Adnan Dev</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#home">Home</a>
+    <nav class="fixed w-full h-14 md:h-16 dark:bg-[#1f1f1f] bg-slate-50 z-10">
+      <div class="flex justify-between h-full w-[90%] mx-auto relative md:w-[75%] xl:max-w-[75%]">
+        <div class="logo my-auto">
+          <a href="#" class="text-[#1f1f1f] dark:text-white dark:transition-colors duration-500"><i class="bx bxs-face bx-tada-hover bx-lg md:bx-lg"></i></a>
+        </div>
+        <div class="translate-y-1/2 bottom-1/2 absolute left-1/2 -translate-x-1/2 md:-right-[15%] md:left-auto md:translate-x-0">
+          <input type="checkbox" name="" id="toggle" class="hidden" checked />
+          <label for="toggle" class="cursor-pointer">
+            <!-- <div class="w-12 h-7 bg-slate-400 rounded-full flex items-center p-1">
+            <div class="w-5 h-5 bg-slate-200 rounded-full toggle-circle transition-all duration-500"></div>
+          </div> -->
+            <div class="sun animate-fade">
+              <i class="bx bx-sun bx-md bx-spin-hover dark:text-white"></i>
+            </div>
+            <div class="moon animate-fade hidden">
+              <i class="bx bx-moon bx-md bx-tada-hover text-[#1f1f1f]"></i>
+            </div>
+          </label>
+        </div>
+        <div class="my-auto md:hidden">
+          <input type="checkbox" name="" id="hamburger" class="hidden" />
+          <label for="hamburger">
+            <i class="bx bx-menu bx-md text-[#1f1f1f] dark:text-white dark:transition-colors duration-500 cursor-pointer"></i>
+          </label>
+        </div>
+        <div class="hamburger-content -right-[40rem] transition-all duration-700 md:flex md:top-auto md:right-auto md:static md:w-[50%]">
+          <ul class="md:flex md:items-center md:w-full md:justify-between relative font-semibold text-lg">
+            <li class="mb-8 text-slate-800 md:mb-0">
+              <a href="#" class="navbar-menu">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About Me</a>
+            <li class="mb-8 text-slate-800 md:mb-0">
+              <a href="#about" class="navbar-menu">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
+            <li class="mb-8 text-slate-800 md:mb-0">
+              <a href="#skills" class="navbar-menu">Skills</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
+            <li class="mb-8 text-slate-800 md:mb-0">
+              <a href="#projects" class="navbar-menu">Projects</a>
+            </li>
+            <li class="mb-8 text-slate-800 md:mb-0">
+              <a href="#contact" class="navbar-menu">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <!-- Akhr Navbar -->
-
-    <!-- Jumbotron -->
-    <section class="jumbotron text-center">
-      <img src="images/profile.JPG" alt="" width="250px" class="rounded-circle img-thumbnail" />
-      <h1 class="display-4">Adnan Dharmawan</h1>
-      <p class="lead">Student | FrontEnd Dev</p>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#ffffff"
-          fill-opacity="1"
-          d="M0,160L40,160C80,160,160,160,240,181.3C320,203,400,245,480,261.3C560,277,640,267,720,240C800,213,880,171,960,165.3C1040,160,1120,192,1200,197.3C1280,203,1360,181,1400,170.7L1440,160L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
-        ></path>
-      </svg>
-    </section>
-    <!-- Akhir Jumbotron -->
-
-    <!-- About Me -->
-    <section id="about">
-      <div class="container">
-        <div class="row text-center mb-3">
-          <div class="col">
-            <h2>About Me</h2>
-          </div>
+    <!-- Hero Section -->
+    <div class="w-full h-[100vh]">
+      <div class="absolute -z-10 w-full h-full overflow-hidden light-theme animate-fade">
+        <svg
+          class="text-black animate-fade"
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svgjs="http://svgjs.dev/svgjs"
+          preserveAspectRatio="none"
+          width="1460"
+          height="764"
+          viewBox="0 0 1460 764"
+        >
+          <g mask='url("#SvgjsMask1087")' fill="none">
+            <rect width="1460" height="764" x="0" y="0" fill="rgba(255, 255, 255, 1)"></rect>
+            <path d="M782.28 150.02a42.34 42.34 0 1 0-81.18 24.06z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M745.33 350.06a31.18 31.18 0 1 0 30.09-54.62z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M274.48 406.78a31.46 31.46 0 1 0 47.92 40.78z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M743.75 432.44L799.41 432.44L799.41 479.27L743.75 479.27z" fill="rgba(0, 0, 0, 1)"></path>
+            <path d="M616.46 250.5a9.35 9.35 0 1 0-13.12 13.32z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M867.57 189.24L914.98 189.24L914.98 211.44L867.57 211.44z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M1134.64 519.55 a7.21 7.21 0 1 0 14.42 0 a7.21 7.21 0 1 0 -14.42 0z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M123.34 183.73 a34.98 34.98 0 1 0 69.96 0 a34.98 34.98 0 1 0 -69.96 0z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M240.95 559.02L244.62 559.02L244.62 581.7L240.95 581.7z" fill="rgba(0, 0, 0, 1)"></path>
+            <path d="M1072.7 18.17 a41.64 41.64 0 1 0 83.28 0 a41.64 41.64 0 1 0 -83.28 0z" fill="rgba(0, 0, 0, 1)"></path>
+            <path d="M1317.97 130.68L1371.63 130.68L1371.63 184.34L1317.97 184.34z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M604.41 488.03L626.64 488.03L626.64 495.02L604.41 495.02z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M242.79 176.04L281.92 176.04L281.92 201.56L242.79 201.56z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M519.71 475.46L540.24 475.46L540.24 495.99L519.71 495.99z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M94.46 314.96L139.98 314.96L139.98 331.18L94.46 331.18z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M1152.05 383.15L1179.33 383.15L1179.33 410.43L1152.05 410.43z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M841.09 387.08L878.68 387.08L878.68 422.5L841.09 422.5z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M335.93 495.39L371.21 495.39L371.21 512.6L335.93 512.6z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M1159.24 319.89L1203.91 319.89L1203.91 360.56L1159.24 360.56z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M386.78 3.96L424.92 3.96L424.92 42.1L386.78 42.1z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M1372.48 164.21a11.63 11.63 0 1 0-22.05-7.41z" fill="rgba(0, 0, 0, 1)"></path>
+            <path d="M1309.76 83.04L1321.47 83.04L1321.47 115.77L1309.76 115.77z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M623.85 266.61 a55.39 55.39 0 1 0 110.78 0 a55.39 55.39 0 1 0 -110.78 0z" fill="rgba(255, 255, 255, 1)"></path>
+            <path d="M565.43 130.69L585.04 130.69L585.04 152.54L565.43 152.54z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M394.7 109.74a48.37 48.37 0 1 0-80.69 53.36z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M513.63 258.11L567.45 258.11L567.45 311.93L513.63 311.93z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M856.2 487.6L887.01 487.6L887.01 529.37L856.2 529.37z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M873.88 297.13 a5.69 5.69 0 1 0 11.38 0 a5.69 5.69 0 1 0 -11.38 0z" fill="rgba(0, 0, 0, 1)"></path>
+            <path d="M978.65 520.7L1023.41 520.7L1023.41 565.46L978.65 565.46z" fill="rgba(0, 0, 0, 1)"></path>
+            <path d="M1009.66 536.53a38.78 38.78 0 1 0-46.97-61.72z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M801.27 286.41L814.09 286.41L814.09 299.23L801.27 299.23z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M871.23 266.13L887.58 266.13L887.58 298.63L871.23 298.63z" fill="rgba(0, 0, 0, 1)"></path>
+            <path d="M643.19 176.99a25.12 25.12 0 1 0-16.45-47.47z" stroke="rgba(0, 0, 0, 1)"></path>
+          </g>
+          <defs>
+            <mask id="SvgjsMask1087">
+              <rect width="1460" height="764" fill="#ffffff"></rect>
+            </mask>
+          </defs>
+        </svg>
+        <!-- <svg
+          class="text-black hidden dark-theme"
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svgjs="http://svgjs.dev/svgjs"
+          preserveAspectRatio="none"
+          width="1460"
+          height="764"
+          viewBox="0 0 1460 764"
+        >
+          <g mask='url("#SvgjsMask1087")' fill="none">
+            <rect width="1460" height="764" x="0" y="0" fill="rgba(0, 0, 0, 1)"></rect>
+            <path d="M782.28 150.02a42.34 42.34 0 1 0-81.18 24.06z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M745.33 350.06a31.18 31.18 0 1 0 30.09-54.62z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M274.48 406.78a31.46 31.46 0 1 0 47.92 40.78z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M743.75 432.44L799.41 432.44L799.41 479.27L743.75 479.27z" fill="rgba(255, 255, 255, 1)"></path>
+            <path d="M616.46 250.5a9.35 9.35 0 1 0-13.12 13.32z" stroke="rgba(0, 0, 0, 1)"></path>
+            <path d="M867.57 189.24L914.98 189.24L914.98 211.44L867.57 211.44z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M1134.64 519.55 a7.21 7.21 0 1 0 14.42 0 a7.21 7.21 0 1 0 -14.42 0z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M123.34 183.73 a34.98 34.98 0 1 0 69.96 0 a34.98 34.98 0 1 0 -69.96 0z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M240.95 559.02L244.62 559.02L244.62 581.7L240.95 581.7z" fill="rgba(255, 255, 255, 1)"></path>
+            <path d="M1072.7 18.17 a41.64 41.64 0 1 0 83.28 0 a41.64 41.64 0 1 0 -83.28 0z" fill="rgba(255, 255, 255, 1)"></path>
+            <path d="M1317.97 130.68L1371.63 130.68L1371.63 184.34L1317.97 184.34z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M604.41 488.03L626.64 488.03L626.64 495.02L604.41 495.02z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M242.79 176.04L281.92 176.04L281.92 201.56L242.79 201.56z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M519.71 475.46L540.24 475.46L540.24 495.99L519.71 495.99z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M94.46 314.96L139.98 314.96L139.98 331.18L94.46 331.18z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M1152.05 383.15L1179.33 383.15L1179.33 410.43L1152.05 410.43z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M841.09 387.08L878.68 387.08L878.68 422.5L841.09 422.5z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M335.93 495.39L371.21 495.39L371.21 512.6L335.93 512.6z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M1159.24 319.89L1203.91 319.89L1203.91 360.56L1159.24 360.56z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M386.78 3.96L424.92 3.96L424.92 42.1L386.78 42.1z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M1372.48 164.21a11.63 11.63 0 1 0-22.05-7.41z" fill="rgba(255, 255, 255, 1)"></path>
+            <path d="M1309.76 83.04L1321.47 83.04L1321.47 115.77L1309.76 115.77z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M623.85 266.61 a55.39 55.39 0 1 0 110.78 0 a55.39 55.39 0 1 0 -110.78 0z" fill="rgba(0, 0, 0, 1)"></path>
+            <path d="M565.43 130.69L585.04 130.69L585.04 152.54L565.43 152.54z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M394.7 109.74a48.37 48.37 0 1 0-80.69 53.36z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M513.63 258.11L567.45 258.11L567.45 311.93L513.63 311.93z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M856.2 487.6L887.01 487.6L887.01 529.37L856.2 529.37z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M873.88 297.13 a5.69 5.69 0 1 0 11.38 0 a5.69 5.69 0 1 0 -11.38 0z" fill="rgba(255, 255, 255, 1)"></path>
+            <path d="M978.65 520.7L1023.41 520.7L1023.41 565.46L978.65 565.46z" fill="rgba(255, 255, 255, 1)"></path>
+            <path d="M1009.66 536.53a38.78 38.78 0 1 0-46.97-61.72z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M801.27 286.41L814.09 286.41L814.09 299.23L801.27 299.23z" stroke="rgba(255, 255, 255, 1)"></path>
+            <path d="M871.23 266.13L887.58 266.13L887.58 298.63L871.23 298.63z" fill="rgba(255, 255, 255, 1)"></path>
+            <path d="M643.19 176.99a25.12 25.12 0 1 0-16.45-47.47z" stroke="rgba(255, 255, 255, 1)"></path>
+          </g>
+          <defs>
+            <mask id="SvgjsMask1087">
+              <rect width="1460" height="764" fill="#00000"></rect>
+            </mask>
+          </defs>
+        </svg> -->
+      </div>
+      <!-- particles.js container -->
+      <div id="particles-js" class="-z-10 absolute particles animate-fade"></div>
+      <div class="pt-[6rem] md:pt-[5rem] w-[90%] h-[100vh] md:w-[75%] xl:max-w-[1024px] mx-auto">
+        <div class="w-full mb-8 md:-mb-10">
+          <h1 class="hero-header text-[2rem] dark:text-white mb-10 md:text-5xl font-extrabold leading-relaxed md:leading-loose">
+            Hi,<br />
+            I'm <span class="text-red-700">Adnan</span><br />
+            <span class="status"></span>
+          </h1>
+          <a href="#contact" class="hero-button bg-red-700 px-10 py-[12px] rounded-lg text-white">Contact</a>
         </div>
-        <div class="row justify-content-center fs-5 text-center">
-          <div class="col-md-4">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quasi et sunt accusamus quaerat labore dignissimos neque, sit fuga dolorum.</p>
+        <div class="flex md:flex-none justify-between items-center">
+          <div class="flex-col w-[20px] h-full dark:text-white md:flex-row md:w-auto flex">
+            <a class="linkedin mt-9 md:mt-0 mb-5 md:mr-8" href="https://www.linkedin.com/in/adnan-fito-dharmawan-2bb62a23a" target="_blank">
+              <i class="bx bxl-linkedin bx-sm"></i>
+            </a>
+            <a class="instagram mb-5 md:mr-8" href="https://instagram.com/adnanfito_" target="_blank">
+              <i class="bx bxl-instagram-alt bx-sm"></i>
+            </a>
+            <a class="github mb-5 md:mr-8" href="https://github.com/adnanfito" target="_blank">
+              <i class="bx bxl-github bx-sm"></i>
+            </a>
           </div>
-          <div class="col-md-4">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti voluptatem at voluptates ea ex eveniet ducimus blanditiis similique harum, illo excepturi voluptatum tempore. Nihil, dolorum?</p>
+          <div class="md:flex-none">
+            <div class="hero-image rounded-full w-[250px] md:w-[350px] overflow-hidden relative md:-translate-y-1/2 md:-top-[6rem]">
+              <svg class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[500px] h-[400px] md:w-[700px] md:h-[600px] -z-10 light-profile hidden" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill="#000000"
+                  d="M47.4,-39C63.9,-31,81.2,-15.5,84.1,2.9C86.9,21.2,75.3,42.4,58.8,55C42.4,67.6,21.2,71.5,2.5,69C-16.3,66.5,-32.5,57.6,-46.2,45.1C-59.9,32.5,-70.9,16.3,-67.4,3.6C-63.8,-9.2,-45.6,-18.3,-32,-26.3C-18.3,-34.3,-9.2,-41.2,3.2,-44.3C15.5,-47.5,31,-47,47.4,-39Z"
+                  transform="translate(100 100)"
+                />
+              </svg>
+              <svg class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[500px] h-[400px] md:w-[700px] md:h-[600px] -z-10 dark-profile" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill="#ffffff"
+                  d="M47.4,-39C63.9,-31,81.2,-15.5,84.1,2.9C86.9,21.2,75.3,42.4,58.8,55C42.4,67.6,21.2,71.5,2.5,69C-16.3,66.5,-32.5,57.6,-46.2,45.1C-59.9,32.5,-70.9,16.3,-67.4,3.6C-63.8,-9.2,-45.6,-18.3,-32,-26.3C-18.3,-34.3,-9.2,-41.2,3.2,-44.3C15.5,-47.5,31,-47,47.4,-39Z"
+                  transform="translate(100 100)"
+                />
+              </svg>
+              <img src="src/images/profile1.png" alt="" class="w-[250px] object-bottom mx-auto md:w-full" />
+            </div>
           </div>
         </div>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#b8dbd9"
-          fill-opacity="1"
-          d="M0,32L40,48C80,64,160,96,240,112C320,128,400,128,480,122.7C560,117,640,107,720,117.3C800,128,880,160,960,181.3C1040,203,1120,213,1200,192C1280,171,1360,117,1400,90.7L1440,64L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
-        ></path>
-      </svg>
-    </section>
-    <!-- Akhir About me -->
+    </div>
 
+    <!-- About -->
+    <section id="about" class="section dark:bg-black bg-white">
+      <h2 class="section-header">About</h2>
+      <div class="bg-grid grid-cols-1 md:grid-cols-2">
+        <div class="about-image">
+          <img src="src/images/profile-preview.png" alt="" class="mx-auto w-[250px] md:w-[400px] rounded-lg" />
+        </div>
+        <div class="my-auto text-center md:text-left">
+          <h2 class="desc-header text-[1.5rem] font-bold mb-4 dark:text-white">Hello!</h2>
+          <p class="desc-content dark:text-white">
+            As an Informatics student with a passion for front-end development, I am excited to showcase my skills and experiences. I have a keen interest in designing and building user-friendly websites that leave a lasting impression on
+            users. With a background in front-end development and expertise in operating Microsoft Word and Excel, I bring a unique blend of technical and organizational skills to every project I work on.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Skills -->
+    <section id="skills" class="section dark:bg-black bg-white">
+      <h2 class="section-header">Skills</h2>
+      <div class="bg-grid grid-cols-1 md:grid-cols-2">
+        <div class="shadow-lg rounded-lg">
+          <div class="skilldata skill-1">
+            <div class="flex items-center">
+              <i class="skill-icon bx bxl-tailwind-css"></i>
+              <span class="dark:text-white">TAILWIND</span>
+            </div>
+            <div class="skillbar"></div>
+          </div>
+          <div class="skilldata skill-2">
+            <div class="flex items-center">
+              <i class="skill-icon bx bxl-css3"></i>
+              <span class="dark:text-white">CSS</span>
+            </div>
+            <div class="skillbar"></div>
+          </div>
+          <div class="skilldata skill-3">
+            <div class="flex items-center">
+              <i class="skill-icon bx bxl-javascript"></i>
+              <span class="dark:text-white">JAVASCRIPT</span>
+            </div>
+            <div class="skillbar"></div>
+          </div>
+        </div>
+        <div class="shadow-lg rounded-lg">
+          <div class="skilldata skill-4">
+            <div class="flex items-center">
+              <i class="skill-icon bx bxl-bootstrap"></i>
+              <span class="dark:text-white">BOOTSTRAP</span>
+            </div>
+            <div class="skillbar"></div>
+          </div>
+          <div class="skilldata skill-5">
+            <div class="flex items-center">
+              <i class="skill-icon bx bxl-php"></i>
+              <span class="dark:text-white">PHP</span>
+            </div>
+            <div class="skillbar"></div>
+          </div>
+          <div class="skilldata skill-6">
+            <div class="flex items-center">
+              <i class="skill-icon bx bxl-react"></i>
+              <span class="dark:text-white">REACT (on going)</span>
+            </div>
+            <div class="skillbar"></div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Projects -->
-    <section id="projects">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col">
-            <h2>My Projects</h2>
-          </div>
-        </div>
-        <div class="row" style="padding-top: 2rem">
-          <div class="col-md-4 mb-3">
-            <div class="card img-thumbnail">
-              <img src="images/projects/mechanical1.jpg" class="card-img-top" alt="mechanical1" width="200px" />
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card img-thumbnail">
-              <img src="images/projects/mechanical2.jpg" class="card-img-top" alt="mechanical2" width="200px" />
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card img-thumbnail">
-              <img src="images/projects/mechanical3.jpg" class="card-img-top" alt="mechanical1" width="200px" />
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
+    <section id="projects" class="section dark:bg-black bg-white">
+      <h2 class="section-header">Projects</h2>
+      <div class="bg-grid grid-cols-1 justify-items-center">
+        <div class="project-1 rounded-lg overflow-hidden group max-w-lg">
+          <a href="https://github.com/adnanfito/plantify.io" target="_blank">
+            <img src="src/images/projects/project-1.png" alt="" class="group-hover:scale-125 transition-all duration-500" />
+          </a>
         </div>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#fff"
-          fill-opacity="1"
-          d="M0,192L48,202.7C96,213,192,235,288,218.7C384,203,480,149,576,128C672,107,768,117,864,117.3C960,117,1056,107,1152,112C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-        ></path>
-      </svg>
     </section>
-    <!-- Akhir Projects -->
-
     <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-        <div class="row text-center mb-3">
-          <div class="col">
-            <h2>Contact Me</h2>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-6">
-            <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
-              <strong>Matur nuwun!</strong> Pesan anda berhasil dikirim.
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            <form name="submit-to-google-sheet">
-              <div class="mb-3">
-                <label for="name" class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" />
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Alamat Email</label>
-                <input type="email" class="form-control" id="email" aria-describedby="email" name="email" />
-              </div>
-              <div class="mb-3">
-                <label for="Pesan" class="form-label">Pesan</label>
-                <textarea class="form-control" id="Pesan" rows="3" name="pesan"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary btn-kirim">Kirim!</button>
-              <button class="btn btn-primary btn-loading d-none" type="button" disabled>
-                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                Loading...
-              </button>
-            </form>
-          </div>
-        </div>
+    <section id="contact" class="section dark:bg-black bg-white">
+      <h2 class="section-header">Contact</h2>
+      <div class="bg-grid grid-cols-1 justify-items-center">
+        <form action="" class="md:w-[360px]" name="contact-form" id="myform">
+          <input class="contact-input contact-name" type="text" name="name" id="" placeholder="Name" />
+          <input class="contact-input contact-email" type="email" name="email" id="" placeholder="Email" />
+          <textarea class="contact-input contact-text" name="message" id="" cols="0" rows="10"></textarea>
+          <input type="submit" value="Send" class="contact-button text-white bg-red-700 font-poppins cursor-pointer py-3 px-10 rounded-lg ml-auto block" />
+        </form>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#2f4550"
-          fill-opacity="1"
-          d="M0,320L48,293.3C96,267,192,213,288,213.3C384,213,480,267,576,272C672,277,768,235,864,229.3C960,224,1056,256,1152,256C1248,256,1344,224,1392,208L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-        ></path>
-      </svg>
     </section>
-    <!-- Akhir Contact -->
-
     <!-- Footer -->
-    <footer class="text-white text-center pb-3">
-      <p>Created with <i class="bi bi-heart-fill"></i> by <a href="https://www.instagram.com/adnanfito_" class="text-white fw-bold">Adnan Fito Dharmawan</a></p>
+    <footer class="w-full bg-[#1f1f1f] py-8 text-white text-center">
+      <p class="text-[2rem] mb-8 font-semibold">Adnan</p>
+      <div class="mb-8">
+        <a class="m-4 text-2xl" href="https://m.facebook.com/Adnanfito26" target="_blank"><i class="bx bxl-facebook"></i></a>
+        <a class="m-4 text-2xl" href="https://instagram.com/adnanfito_" target="_blank"><i class="bx bxl-instagram"></i></a>
+        <a class="m-4 text-2xl" href="https://twitter.com/AdnanDhrmwn" target="_blank"><i class="bx bxl-twitter"></i></a>
+      </div>
+      <p class="">© 2023 copyright all right reserved</p>
     </footer>
-    <!-- Akhir Footer -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-
+    <!-- scripts -->
     <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbxSddqgS0QneXB02uBXteCQrmUhJUzHoRqhU-r9le-d-rBMQQ1F9ao_gpr_gpVelbh4/exec';
-      const form = document.forms['submit-to-google-sheet'];
-      const btnKirim = document.querySelector('.btn-kirim');
-      const btnLoading = document.querySelector('.btn-loading');
-      const alert = document.querySelector('.alert');
-
-      // Ketika tombol submit di klik
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxArEZIsmn2cQgvbWyI9VJjcClKeJPljcW_PStuIgWCIKV8J5mg4AG10Dr3qks5yeRi/exec';
+      const form = document.forms['contact-form'];
 
       form.addEventListener('submit', (e) => {
         e.preventDefault();
-        btnLoading.classList.toggle('d-none');
-        btnKirim.classList.toggle('d-none');
         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-          .then((response) => {
-            btnLoading.classList.toggle('d-none');
-            btnKirim.classList.toggle('d-none');
-            alert.classList.toggle('d-none');
-            // reset form
-            form.reset();
-            console.log('Success!', response);
-          })
+          .then((response) => console.log('Success!', response))
           .catch((error) => console.error('Error!', error.message));
+        form.reset();
       });
     </script>
+
+    <script>
+      ScrollReveal().reveal('.hero-header', { delay: 300 });
+      ScrollReveal().reveal('.hero-button');
+      ScrollReveal().reveal('.hero-image', { delay: 300 });
+      ScrollReveal().reveal('.linkedin', { delay: 300 });
+      ScrollReveal().reveal('.instagram', { delay: 600 });
+      ScrollReveal().reveal('.github', { delay: 900 });
+      ScrollReveal().reveal('.about-image', { delay: 300 });
+      ScrollReveal().reveal('.desc-header', { delay: 300 });
+      ScrollReveal().reveal('.desc-content', { delay: 500 });
+      ScrollReveal().reveal('.skill-1', { delay: 300 });
+      ScrollReveal().reveal('.skill-2', { delay: 500 });
+      ScrollReveal().reveal('.skill-3', { delay: 700 });
+      ScrollReveal().reveal('.skill-4', { delay: 900 });
+      ScrollReveal().reveal('.skill-5', { delay: 1100 });
+      ScrollReveal().reveal('.skill-6', { delay: 1300 });
+      ScrollReveal().reveal('.project-1', { delay: 300 });
+      ScrollReveal().reveal('.contact-name', { delay: 300 });
+      ScrollReveal().reveal('.contact-email', { delay: 500 });
+      ScrollReveal().reveal('.contact-text', { delay: 700 });
+      ScrollReveal().reveal('.contact-button', { delay: 900 });
+    </script>
+    <script src="./src/js/particles.js"></script>
+    <script src="./src/js/app.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>

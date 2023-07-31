@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  #toggle:checked ~ label div.toggle-circle {
+    @apply translate-x-5 bg-slate-600;
+  }
+}
+
+@layer components {
+  .hamburger-content {
+    @apply fixed w-[80%] h-[100%] top-14 p-8 bg-slate-50 dark:bg-[#1f1f1f] md:bg-transparent md:dark:bg-transparent;
+  }
+  .navbar-menu {
+    @apply relative after:content-[''] after:absolute dark:after:bg-red-700 after:bg-red-700 after:h-[3px] after:w-0 after:left-0 after:-bottom-[10px] hover:after:w-full after:transition-all duration-700 dark:text-slate-50;
+  }
+  #particles-js {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    background-image: url('');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  .bg-grid {
+    @apply grid mx-auto w-[90%] max-w-5xl gap-x-8 gap-y-8;
+  }
+  .skilldata {
+    @apply flex justify-center items-center relative font-semibold py-2 px-4 rounded-lg shadow-sm;
+  }
+  .skill-icon {
+    @apply dark:text-white text-red-700 before:box-border text-[2rem] mr-4;
+  }
+  .skillbar {
+    @apply absolute left-0 bottom-0 h-1 bg-red-700 w-full rounded-lg;
+  }
+  .section {
+    @apply pt-12 pb-8 dark:bg-black dark:border-t-black mx-auto transition-colors duration-500;
+  }
+  .section-header {
+    @apply mb-8 mt-4 text-center text-[1.25rem] md:text-[2rem] font-extrabold relative after:content-[''] after:absolute dark:after:bg-red-700 after:bg-red-700 after:h-[3px] after:left-1/2 after:-translate-x-1/2 after:w-[3.5rem] after:-bottom-[3px] text-red-700;
+  }
+  .contact-input {
+    @apply w-full p-4 rounded-lg border-slate-700 border mb-8;
+  }
+}
