@@ -14,6 +14,37 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <!-- Scroll Reveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: 'poppins',
+            },
+            animation: {
+              fade: 'fade 0.5s linear',
+              blinker: 'blinker 1s linear infinite',
+            },
+            keyframes: {
+              fade: {
+                '0%': { opacity: 0 },
+                '100%': { opacity: 1 },
+              },
+              blinker: {
+                '50%': {
+                  opacity: 0,
+                },
+              },
+            },
+          },
+        },
+        plugins: [],
+      };
+    </script>
+
     <script>
       ScrollReveal({ reset: false });
       ScrollReveal({ duration: 1000 });
