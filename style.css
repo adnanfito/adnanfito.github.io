@@ -933,6 +933,20 @@ video {
   animation: fade 0.5s linear;
 }
 
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-blinker {
+  animation: blinker 1s linear infinite;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -976,11 +990,6 @@ video {
 .bg-\[\#1f1f1f\] {
   --tw-bg-opacity: 1;
   background-color: rgb(31 31 31 / var(--tw-bg-opacity));
-}
-
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-red-700 {
@@ -1151,11 +1160,6 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-:is(.dark .dark\:bg-white) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
 :is(.dark .dark\:text-white) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1286,6 +1290,11 @@ video {
     justify-content: space-between;
   }
 
+  .md\:bg-black {
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  }
+
   .md\:pt-\[5rem\] {
     padding-top: 5rem;
   }
@@ -1301,6 +1310,11 @@ video {
 
   .md\:leading-loose {
     line-height: 2;
+  }
+
+  :is(.dark .md\:dark\:bg-white) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   }
 }
 
